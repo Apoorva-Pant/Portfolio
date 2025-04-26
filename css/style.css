@@ -53,12 +53,14 @@
     position: fixed;
     top: 0;
     width: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
     background: white;
     padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     z-index: 10;
   }
-  
   .nav-container {
     display: flex;
     align-items: center;
@@ -126,15 +128,19 @@
       align-self: flex-end;
     }
   
+   
     .nav-links {
-      flex-direction: column;
-      width: 100%;
-      overflow: hidden;
-      max-height: 0;
-      opacity: 0;
-    }
+        display: none; /* hidden initially */
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        margin-top: 1rem;
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      }
   
     .nav-links.show {
+      display: flex;
       max-height: 500px; 
       opacity: 1;
     }

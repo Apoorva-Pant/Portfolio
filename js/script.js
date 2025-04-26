@@ -58,4 +58,12 @@ const menuIcon = document.getElementById('mobile-menu-icon');
       });
     });
   }
+  const mobileMenuIcon = document.getElementById("mobile-menu-icon");
+const navLinks = document.getElementById("nav-links");
+
+if (mobileMenuIcon && navLinks) {
+  mobileMenuIcon.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+}
 
