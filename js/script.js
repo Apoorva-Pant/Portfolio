@@ -44,3 +44,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+const menuIcon = document.getElementById('mobile-menu-icon');
+  const navLinks = document.getElementById('nav-links');
+
+  if (menuIcon && navLinks) {
+    menuIcon.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+      });
+    });
+  }
+

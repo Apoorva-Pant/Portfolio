@@ -40,57 +40,54 @@
     text-decoration: none;
     color: #333;
   }
+  
+  
+  nav {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+  }
+  
+   
   .navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     background: white;
     padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     z-index: 10;
   }
-  #mobile-menu-icon {
-    display: none;
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo {
     font-size: 1.5rem;
-    cursor: pointer;
+    font-weight: bold;
   }
-  @media (max-width: 768px) {
-    nav {
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
   
-    #mobile-menu-icon {
-      display: block;
-    }
-  
-    .nav-links {
-      display: none; /* hidden by default */
-      flex-direction: column;
-      width: 100%;
-      background-color: white;
-      margin-top: 1rem;
-      padding: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-  
-    .nav-links.show {
-      display: flex;
-    }
-  
-    .nav-links li {
-      margin-bottom: 1rem;
-    }
-  }
-  nav {
+  .nav-links {
     display: flex;
     gap: 1.5rem;
     list-style: none;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
   }
-  .nav-links {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #007bff;
   }
   .nav-links a:hover {
     color: #007bff;
@@ -112,6 +109,40 @@
   }
   .nav-links a:hover::after {
     width: 100%;
+  }
+  #mobile-menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    .nav-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    #mobile-menu-icon {
+      display: block;
+      align-self: flex-end;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+    }
+  
+    .nav-links.show {
+      max-height: 500px; 
+      opacity: 1;
+    }
+  
+    .nav-links li {
+      padding: 0.75rem 0;
+      width: 100%;
+    }
   }
   .typewriter {
     font-size: 2rem;
@@ -145,6 +176,7 @@
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    right: 0;
     padding: 3rem 1.5rem;
   }
   
