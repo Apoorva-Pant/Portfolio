@@ -16,6 +16,7 @@
   body {
     background: var(--bg-color);
     color: var(--text-color);
+    overflow-x: hidden;
   }
   body {
     font-family: 'Segoe UI', sans-serif;
@@ -42,15 +43,49 @@
   .navbar {
     position: sticky;
     top: 0;
+    width: 100%;
     background: white;
     padding: 1rem 2rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     z-index: 10;
   }
+  #mobile-menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    nav {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    #mobile-menu-icon {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none; /* hidden by default */
+      flex-direction: column;
+      width: 100%;
+      background-color: white;
+      margin-top: 1rem;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+  
+    .nav-links.show {
+      display: flex;
+    }
+  
+    .nav-links li {
+      margin-bottom: 1rem;
+    }
+  }
   nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
   }
   .nav-links {
     display: flex;
